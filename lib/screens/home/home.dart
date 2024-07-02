@@ -2,7 +2,6 @@ import 'package:clients/auth/auth.dart';
 import 'package:clients/components/my_post_button.dart';
 import 'package:clients/components/my_textfield.dart';
 import 'package:clients/database/firestore.dart';
-import 'package:clients/screens/signup/login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -27,10 +26,10 @@ class HomeScreen extends StatelessWidget {
     try {
       await FirebaseAuth.instance.signOut();
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-        return AuthPage();
+        return const AuthPage();
       }));
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Successfully logged out')),
+        const SnackBar(content: Text('Successfully logged out')),
       );
     } catch (error) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -56,16 +55,16 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         foregroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("Home"),
+        title: const Text("Home"),
         elevation: 0,
         actions: [
           IconButton(
             onPressed: () => logout(context),
-            icon: Icon(Icons.logout_outlined, size: 40),
+            icon: const Icon(Icons.logout_outlined, size: 40),
           ),
         ],
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
@@ -90,16 +89,16 @@ class HomeScreen extends StatelessWidget {
             // Posts
             Expanded(
               child: currentUser == null
-                  ? Center(child: Text("No user logged in"))
+                  ? const Center(child: Text("No user logged in"))
                   : StreamBuilder(
                 stream: database.getPostsByEmail(currentUser!.email ?? ''),
                 builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(child: CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   } else if (snapshot.hasError) {
                     return Center(child: Text("Error: ${snapshot.error}"));
                   } else if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-                    return Center(child: Text("No posts...post something..."));
+                    return const Center(child: Text("No posts...post something..."));
                   }
 
                   final posts = snapshot.data!.docs;

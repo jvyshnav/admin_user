@@ -19,8 +19,8 @@ class MyDrawer extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 25.0),
                 child: ListTile(
-                  title: Text("H O M E"),
-                  leading: Icon(Icons.home),
+                  title: const Text("H O M E"),
+                  leading: const Icon(Icons.home),
                   onTap: () {
                     Navigator.pop(context);
                   },
@@ -29,8 +29,8 @@ class MyDrawer extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 25.0),
                 child: ListTile(
-                  title: Text("P R O F I L E"),
-                  leading: Icon(Icons.person),
+                  title: const Text("P R O F I L E"),
+                  leading: const Icon(Icons.person),
                   onTap: () {
                    Navigator.pushNamed(context, '/profile_page');
                   },
@@ -39,8 +39,8 @@ class MyDrawer extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 25.0),
                 child: ListTile(
-                  title: Text("U S E R S"),
-                  leading: Icon(Icons.group),
+                  title: const Text("U S E R S"),
+                  leading: const Icon(Icons.group),
                   onTap: () {
                     Navigator.pushNamed(context, '/user_page');
                   },

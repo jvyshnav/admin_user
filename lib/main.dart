@@ -28,12 +28,12 @@ class MyApp extends StatelessWidget {
         theme:lightMode,
         darkTheme: darkMode,
         routes:    {
-          '/login_register_page':(context) => LoginOrRegister(),
+          '/login_register_page':(context) => const LoginOrRegister(),
           '/home_page':(context) => HomeScreen(),
           '/profile_page':(context)=>ProfileScreen(),
-          '/user_page':(context)=>UserScreen(),
+          '/user_page':(context)=>const UserScreen(),
         },
-        home: AuthPage(),);
+        home: const AuthPage(),);
   }
 }
 //

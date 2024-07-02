@@ -124,11 +124,11 @@ class _RegisterPageState extends State<RegisterPage> {
                     .colorScheme
                     .inversePrimary,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text("M I N I M A L"),
-              SizedBox(
+              const Text("M I N I M A L"),
+              const SizedBox(
                 height: 15,
               ),
               MyTextField(hintText: "username", controller: userController),
@@ -143,14 +143,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 controller: confirmController,
                 obscureText: true,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               MyButton(
                 text: "Register ",
                 onTap: registerUser,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -163,12 +163,12 @@ class _RegisterPageState extends State<RegisterPage> {
                             .secondary,
                         fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   GestureDetector(
                     onTap: widget.onTap,
-                    child: Text(
+                    child: const Text(
                       "Login Now",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),

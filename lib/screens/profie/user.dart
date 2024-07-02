@@ -27,7 +27,7 @@ class UserScreen extends StatelessWidget {
           }
 
           if (snapshot.data == null) {
-            return Text("No data");
+            return const Text("No data");
           }
 
           //get data

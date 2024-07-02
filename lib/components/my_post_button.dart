@@ -9,7 +9,7 @@ class PostButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(padding: EdgeInsets.all(16),margin: EdgeInsets.only(left: 10),
+      child: Container(padding: const EdgeInsets.all(16),margin: const EdgeInsets.only(left: 10),
         decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.secondary,
             borderRadius: BorderRadius.circular(12)),

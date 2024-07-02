@@ -56,16 +56,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     .colorScheme
                     .inversePrimary,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text("M I N I M A L"),
-              SizedBox(
+              const Text("M I N I M A L"),
+              const SizedBox(
                 height: 25,
               ),
 
               MyTextField(hintText: "email", controller: emailController),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               MyTextField(
@@ -73,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: passwordController,
                 obscureText: true,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -90,14 +90,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               MyButton(
                 text: "Login ",
                 onTap: login,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -110,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             .secondary,
                         fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   GestureDetector(
@@ -122,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     //         builder: (context) => RegisterPage(),
                     //       ));
                     // },
-                    child: Text(
+                    child: const Text(
                       "Register Now",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),

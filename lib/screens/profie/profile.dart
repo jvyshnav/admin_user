@@ -18,7 +18,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Profile",
           style: TextStyle(),
         ),
@@ -47,12 +47,12 @@ class ProfileScreen extends StatelessWidget {
                 ),
               );
             } else {
-              return Center(
+              return const Center(
                 child: Text("User data not available"),
               );
             }
           } else {
-            return Center(
+            return const Center(
               child: Text("No data"),
             );
           }
