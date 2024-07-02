@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           '/profile_page':(context)=>ProfileScreen(),
           '/user_page':(context)=>const UserScreen(),
         },
-        home: const AuthPage(),);
+        home:  const AuthPage(),);
   }
 }
 //

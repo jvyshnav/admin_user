@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
 
   // Firestore database access
   final FirestoreDatabaseee database = FirestoreDatabaseee();
-  FirestoreDatabaseee db = FirestoreDatabaseee();
+  final FirestoreDatabaseee db = FirestoreDatabaseee();
 
 
 
@@ -22,21 +22,23 @@ class HomeScreen extends StatelessWidget {
   final User? currentUser = FirebaseAuth.instance.currentUser;
 
   // Logout
-  Future<void> logout(BuildContext context) async {
-    try {
-      await FirebaseAuth.instance.signOut();
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-        return const AuthPage();
-      }));
+  // Logout
+  void logout(BuildContext context) {
+    FirebaseAuth.instance.signOut().then((_) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const AuthPage()),
+      );
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Successfully logged out')),
       );
-    } catch (error) {
+    }).catchError((error) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Error signing out: $error')),
       );
-    }
+    });
   }
+
 
   // Post message
   void postMessage() {
@@ -109,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                       final post = posts[index];
                       String message = post['postMessage'] ?? '';
                       String userEmail = post['userEmail'] ?? ''; // Ensure 'userEmail' is accessed correctly
-                      String timeStamp = (post['timeStamp'] as Timestamp).toDate().toString();
+                      // String timeStamp = (post['timeStamp'] as Timestamp).toDate().toString();
 
                       return ListTile(
                         title: Text(message),
